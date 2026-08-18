@@ -1,0 +1,137 @@
+<form [formGroup]="myForm">
+<fieldset>
+<legend>Registration Form</legend>
+
+
+  <label for="un">Username </label>
+  <input type="text" id="un" placeholder="Enter your Name" formControlName="username">
+  <div style="color:red" *ngIf="myForm.get('username')?.invalid && myForm.get('username')?.touched ">
+  <small>Username must start with an uppercase letter followed by lowercase letters only. 
+   No numbers, spaces, or special characters are allowed.</small>
+  </div>
+  <br><br>
+  
+  <label for="e">E-mail </label>
+  <input type="email" id="e" placeholder="Enter your Email" formControlName="email">
+  <div style="color:red" *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched ">
+  
+  <small style="color:red" *ngIf="myForm.get('email')?.errors?.['pattern']">
+  Invalid Email Format</small></div>
+  <br><br>
+
+  <label for="a">Age </label>
+  <input type="number" id="a" placeholder="Enter your Age" formControlName="age">
+  <div *ngIf="myForm.get('age')?.invalid && myForm.get('age')?.touched ">
+  <small style="color:red" *ngIf="myForm.get('age')?.errors?.['required']">
+  Age Required</small>
+  <small style="color:red" *ngIf="myForm.get('age')?.errors?.['min']">
+  Minimum age should be 18</small>
+  <small style="color:red" *ngIf="myForm.get('age')?.errors?.['max']">
+  Maximum age should be 65</small>
+  </div>
+  <br><br>
+
+  <label for="pass">Password </label>
+  <input type="password" id="pass" placeholder="Enter your Password" formControlName="password">
+  <div *ngIf="myForm.get('password')?.invalid && myForm.get('password')?.touched ">
+  <small style="color:red" *ngIf="myForm.get('password')?.errors?.['required']">
+  Password Required</small>
+  <small style="color:red" *ngIf="myForm.get('password')?.errors?.['pattern']">
+  Password must be exactly 14 characters and can contain letters, numbers and special characters.</small>
+  </div>
+  <br><br>
+
+  <label for="retype">Re-enter </label>
+  <input type="password" id="retype" placeholder="Retype your password" formControlName="retypepass">
+  <div style="color:red" *ngIf="myForm.get('retypepass')?.invalid && myForm.get('retypepass')?.touched ">
+  Retype your Password
+  </div>
+  <br><br>
+
+  <label>Gender </label>
+  <input type="radio" name="gender" value="female" formControlName="gender">Female
+  <input type="radio" name="gender" value="male" formControlName="gender">Male
+  <input type="radio" name="gender" value="others" formControlName="gender">Others
+  <div  *ngIf="myForm.get('gender')?.invalid && myForm.get('gender')?.touched">
+  <small style="color:red" *ngIf="myForm.get('gender')?.errors?.['required']">
+  Please select your gender
+  </small></div>
+  <br><br>
+
+  <label>Course </label>
+  <input type="checkbox"  formControlName="java">Java
+  <input type="checkbox"  formControlName="python">Python
+  <input type="checkbox"  formControlName="csharp">C#
+  <input type="checkbox"  formControlName="angular">Angular
+  <br><br>
+
+  <button (click)="submit()">Register</button>
+</fieldset>
+</form>
+<hr>
+<table border="3">
+    <th>Name</th>
+    <th>E-mail</th>
+    <th>Age</th>
+    <th>Password</th>
+    <th>Re-enter</th>
+    <th>Gender</th>
+    <th>Course</th>
+    <th>Action</th>
+    <tr *ngFor="let u of user">
+      <td>{{u.username}}</td>
+      <td>{{u.email}}</td>
+      <td>{{u.age}}</td>
+      <td>{{u.password}}</td>
+      <td>{{u.retypepass}}</td>
+      <td>{{u.gender}}</td>
+      <!-- <td>{{u.}}</td> -->
+      <td><button (click)="patch(u)">Edit</button>
+      <button (click)="delete(u.id)">Delete</button></td>
+     </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+</table>

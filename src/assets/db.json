@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "username": "Sharmina",
+      "email": "sharm6326@gmail.com",
+      "age": 23,
+      "password": "12345",
+      "retypepass": "12345",
+      "gender": "female",
+      "java": true,
+      "python": true,
+      "csharp": false,
+      "angular": false,
+      "id": "mli1Ls09h7A"
+    },
+    {
+      "username": "Sharmina",
+      "email": "sharm6326@gmail.com",
+      "age": 23,
+      "password": "12345",
+      "retypepass": "12345",
+      "gender": "female",
+      "java": true,
+      "python": true,
+      "csharp": false,
+      "angular": false,
+      "id": "E0WoixLkEbU"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
