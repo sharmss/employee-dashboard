@@ -6,8 +6,9 @@
   <label for="un">Username </label>
   <input type="text" id="un" placeholder="Enter your Name" formControlName="username">
   <div style="color:red" *ngIf="myForm.get('username')?.invalid && myForm.get('username')?.touched ">
-  <small>Username must start with an uppercase letter followed by lowercase letters only. 
-   No numbers, spaces, or special characters are allowed.</small>
+  <!-- <small>Username must start with an uppercase letter followed by lowercase letters only. 
+   No numbers, spaces, or special characters are allowed.</small> -->
+   <small>Username</small>
   </div>
   <br><br>
   
